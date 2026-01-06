@@ -64,6 +64,7 @@ def create(filename):
         meta_payload = f"\n___\n## Meta: \n\n```json \n #Potential Facility: (Area Code)\n\n{rows_str_main}\n```"
 
         file.write(meta_payload)
+        print("written")
 
 
 def main():
@@ -71,6 +72,9 @@ def main():
         filename = f"C:/Users/gavin.peatross/Notes/obi-notes/WORK/TICKETS/{date.today()}/{args[1]} - {args[2]} - {args[3]} - {date.today()}.md"
 
     else:
-        filename = f"C:/Users/gavin.peatross/Notes/obi-notes/WORK/{args[1]} - {args[2]} - {args[3]}.md"
+        filename = f"C:/Users/gavin.peatross/Notes/obi-notes/WORK/{args[1]} - {args[2]} - {args[3]} - {date.today()}.md"
 
     create(filename)
+
+
+main()
