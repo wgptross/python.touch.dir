@@ -6,15 +6,7 @@ from datetime import date
 
 time_now = datetime.datetime.now()
 args = sys.argv
-
-
-# config setup
-#
-#
-#
-# {args[1]} - {args[2]} - {args[3]}.md"
-
-# filename = f"C:/Users/gavin.peatross/Notes/obi-notes/" + str(date.today())
+areacode = args[3][2:5]
 
 
 def check_dir() -> bool:
@@ -31,22 +23,6 @@ def check_dir() -> bool:
         print("")
         os.mkdir(filename_prefix)
         return False
-
-
-if check_dir():
-    filename = f"C:/Users/gavin.peatross/Notes/obi-notes/WORK/TICKETS/{date.today()}/{args[1]} - {args[2]} - {args[3]} - {date.today()}.md"
-
-
-else:
-    filename = f"C:/Users/gavin.peatross/Notes/obi-notes/WORK/{args[1]} - {args[2]} - {args[3]}.md"
-
-
-print(filename)
-
-
-time_now = datetime.datetime.now()
-args = sys.argv
-areacode = args[3][2:5]
 
 
 def create(filename):
@@ -90,4 +66,11 @@ def create(filename):
         file.write(meta_payload)
 
 
-create(filename)
+def main():
+    if check_dir():
+        filename = f"C:/Users/gavin.peatross/Notes/obi-notes/WORK/TICKETS/{date.today()}/{args[1]} - {args[2]} - {args[3]} - {date.today()}.md"
+
+    else:
+        filename = f"C:/Users/gavin.peatross/Notes/obi-notes/WORK/{args[1]} - {args[2]} - {args[3]}.md"
+
+    create(filename)
