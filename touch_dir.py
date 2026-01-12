@@ -7,6 +7,8 @@ from datetime import date
 time_now = datetime.datetime.now()
 args = sys.argv
 areacode = args[3][2:5]
+if args[1].startswith("All IT Support"):
+    args[1] = ""
 
 
 def check_dir() -> bool:
