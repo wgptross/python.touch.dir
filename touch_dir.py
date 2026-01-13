@@ -19,8 +19,10 @@ import sys
 time_now = datetime.datetime.now()
 day = time_now.strftime("%m-%d")
 args = sys.argv
-if args[1].startswith("All IT Support"):
+if args[1] == "All":
     args[1] = ""
+if args[2].startswith("IT Support"):
+    args[2] = args[2][13:]
 # arg1 = first name
 # arg2 = last name
 # arg3 = caller number
