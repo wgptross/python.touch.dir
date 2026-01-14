@@ -45,20 +45,6 @@ def create(filename):
         rows_main = cursor.fetchall()
         # prep the data for printing
         rows_str_main = "\n".join(str(row) for row in rows_main)
-        ###
-        # get the object ID for the FLD so I can link web links to the payload
-        # names = cursor.execute(
-        #     """
-        #     SELECT name FROM main_table WHERE SUBSTR(phone, 2, 3)
-        #     """,
-        #     (),
-        # )
-        # objectid = cursor.execute(
-        #     """
-        #     SELECT name, id FROM all_groups WHERE name LIKE 'Fld_%_Users' AND cloud = 'Cloud' AND name NOT LIKE '%FolderRedirectionUsers' WHERE name = ?;
-        #     """,
-        #     (),
-        # )
 
         conn.commit()
         conn.close()
